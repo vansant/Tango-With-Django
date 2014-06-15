@@ -27,3 +27,14 @@ Tango-With-Django
 5. Install requirements
 
     $ pip install -r requirements.txt    
+
+6. Set SECRET_KEY environment variable
+   
+
+    $ nano ~/.bash_profile
+
+    Add this export statement and include your own secret key between the double quotes
+
+    export SECRET_KEY=""
+
+    $ source ~/.bash_profile
