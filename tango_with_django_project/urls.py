@@ -9,6 +9,8 @@ urlpatterns = patterns('',
     # url(r'^$', 'tango_with_django_project.views.home', name='home'),
     # url(r'^tango_with_django_project/', include('tango_with_django_project.foo.urls')),
 
+    url(r'^$', 'rango.views.index', name='rango_index'),
+
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
