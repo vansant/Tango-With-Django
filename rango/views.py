@@ -1,9 +1,7 @@
-from django.http import HttpResponse
+from django.shortcuts import render
 
 def index(request):
-    about_link = '<a href="/rango/about">About</a>'
-    return HttpResponse("Rango says: hello world!" + about_link)
+    return render(request, 'rango/index.html', {'bold_message': 'This is the home page'})
 
 def about(request):
-    home_link = '<a href="/rango/">Home</a>'
-    return HttpResponse("Rango says: here is the about page." + home_link)
+  return render(request, 'rango/about.html', {'bold_message': 'This is the about page'})
