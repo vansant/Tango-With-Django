@@ -3,9 +3,32 @@
 
 {% block title %}Rango{% endblock %}
 {% block content%}
+  <img src="{% static 'rango.png'%}" alt="Rango Image" />
   <h1>Rango Says...</h1>
-  <p><b>{{ bold_message }}</b></p>
+
+{% if categories %}
+  <h2>Most Popular Categories</h2>
+  <ul>
+    {% for category in categories %}
+        <li><a href="{% url 'rango:category' category.url%}">{{ category.name }}</a></li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <p>There are no categories.</p>
+{% endif %}
+
+{% if pages %}
+  <h2>Most Viewed Pages</h2>
+  <ul>
+    {% for page in pages %}
+      <li>{{ page.title }} - {{ page.views }} views</li>
+    {% endfor %}
+  </ul>
+
+{% else%}
+  <p>There are no pages.</p>
+{% endif%}
+
   <br />
   <a href="{% url 'rango:about'%}">About</a>
-  <img src="{% static 'rango.png'%}" alt="Rango Image" />
 {% endblock %}

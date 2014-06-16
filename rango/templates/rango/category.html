@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}Rango{% endblock %}
+
+{% block content%}
+  <h1>{{ category }}</h1>
+
+  {% if category %}
+    {% if pages %}
+      <ul>
+        {% for page in pages %}
+          <li><a href="{{ page.url }}">{{ page.title }}</a></li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p><b>There are no pages for this category.</b></p>
+    {% endif %}
+
+  {% else %}
+    <p>{{category}} does not exist.</p>
+  {% endif %}
+
+
+
+{% endblock %}
